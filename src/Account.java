@@ -24,7 +24,7 @@ public class Account
     {
         if(blocked)
             return false;
-        else if(sum < 0 || sum > bound)
+        else if(sum < 0 || sum > bound || balance + sum > bound)
             return false;
         else
         {
@@ -80,7 +80,9 @@ public class Account
 
     public boolean setMaxCredit(int mc)
     {
-        if(mc < -bound || mc > bound)
+        if (!blocked)
+            return false;
+        else if(mc < -bound || mc > bound)
             return false;
         else
             maxCredit = -mc;
