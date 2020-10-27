@@ -63,5 +63,3 @@ public boolean setMaxCredit(int mc)
         return true;
     }
 ```
-
-##Fix 3
