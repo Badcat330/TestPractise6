@@ -63,3 +63,36 @@ public boolean setMaxCredit(int mc)
         return true;
     }
 ```
+
+##Fix 3
+Fix bound check. 
+
+Before:
+```java
+public boolean setMaxCredit(int mc)
+    {
+        if (!blocked)
+            return false;
+        else if(mc < -bound || mc > bound)
+            return false;
+        else
+            maxCredit = -mc;
+
+        return true;
+    }
+```
+
+After:
+```java
+public boolean setMaxCredit(int mc)
+    {
+        if (!blocked)
+            return false;
+        else if(mc <= -bound || mc >= bound)
+            return false;
+        else
+            maxCredit = -mc;
+
+        return true;
+    }
+```

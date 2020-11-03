@@ -96,9 +96,16 @@ class AccountTest {
     }
 
     @Test
-    void boundSetMaxCreditTest() {
+    void moreBoundSetMaxCreditTest() {
         account.block();
-        boolean answer = account.setMaxCredit(10000000);
+        boolean answer = account.setMaxCredit(1000000);
+        assertFalse(answer);
+    }
+
+    @Test
+    void lessBoundSetMaxCreditTest() {
+        account.block();
+        boolean answer = account.setMaxCredit(-1000000);
         assertFalse(answer);
     }
 

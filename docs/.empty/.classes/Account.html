@@ -16,7 +16,7 @@
 
 <div class="content">
 <div class="breadCrumbs">
-    [ <a href="../../CoverageReport/index.html">all classes</a> ]
+    [ <a href="../../index.html">all classes</a> ]
     [ <a href="../index.html">&lt;empty package name&gt;</a> ]
 </div>
 
@@ -111,7 +111,7 @@
 <i>37</i>&nbsp;    {
 <b class="fc"><i>38</i>&nbsp;        if(blocked)</b>
 <b class="fc"><i>39</i>&nbsp;            return false;</b>
-<b class="fc"><i>40</i>&nbsp;        else if(sum &lt; 0 || sum &gt; bound)</b>
+<b class="fc"><i>40</i>&nbsp;        else if(sum &lt; 0 || Math.abs(balance - sum) &gt; bound)</b>
 <b class="fc"><i>41</i>&nbsp;            return false;</b>
 <b class="fc"><i>42</i>&nbsp;        else if(balance &lt;= maxCredit + sum)</b>
 <b class="fc"><i>43</i>&nbsp;            return false;</b>
@@ -156,7 +156,7 @@
 <i>82</i>&nbsp;    {
 <b class="fc"><i>83</i>&nbsp;        if (!blocked)</b>
 <b class="fc"><i>84</i>&nbsp;            return false;</b>
-<b class="fc"><i>85</i>&nbsp;        else if(mc &lt; -bound || mc &gt; bound)</b>
+<b class="fc"><i>85</i>&nbsp;        else if(mc &lt;= -bound || mc &gt;= bound)</b>
 <b class="fc"><i>86</i>&nbsp;            return false;</b>
 <i>87</i>&nbsp;        else
 <b class="fc"><i>88</i>&nbsp;            maxCredit = -mc;</b>
@@ -169,7 +169,7 @@
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2020-10-27 14:09</div>
+    <div style="float:right;">generated on 2020-11-03 12:38</div>
 </div>
 </body>
 </html>
