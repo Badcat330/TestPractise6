@@ -96,3 +96,42 @@ public boolean setMaxCredit(int mc)
         return true;
     }
 ```
+
+##Fix 4
+Add bound check
+
+Before:
+```java
+    public boolean withdraw(int sum)
+    {
+        if(blocked)
+            return false;
+        else if(sum < 0 || Math.abs(balance - sum) > bound)
+            return false;
+        else if(balance <= maxCredit + sum)
+            return false;
+        else
+        {
+            balance -= sum;
+            return true;
+        }
+    }
+```
+
+After:
+```java
+    public boolean withdraw(int sum)
+    {
+        if(blocked)
+            return false;
+        else if(sum < 0 || sum > bound || Math.abs(balance - sum) > bound)
+            return false;
+        else if(balance <= maxCredit + sum)
+            return false;
+        else
+        {
+            balance -= sum;
+            return true;
+        }
+    }
+```

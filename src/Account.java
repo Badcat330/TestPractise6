@@ -37,7 +37,7 @@ public class Account
     {
         if(blocked)
             return false;
-        else if(sum < 0 || Math.abs(balance - sum) > bound)
+        else if(sum < 0 || sum > bound || Math.abs(balance - sum) > bound)
             return false;
         else if(balance <= maxCredit + sum)
             return false;
